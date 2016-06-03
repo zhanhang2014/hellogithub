@@ -1,14 +1,14 @@
 {
-    "name": "hux-blog",
-    "title": "Hux Blog",
-    "author": "Hux <huxpro@gmail.com>",
+    "name": "zhanhang-blog",
+    "title": "Hang's Blog",
+    "author": "Zhanhang <zhan.hang.2013@gmail.com>",
     "version": "1.6.0",
-    "homepage": "http://huxpro.github.io",
+    "homepage": "http://zhanhang2014.github.io",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Huxpro/huxpro.github.io"
+        "url": "https://github.com/zhanhang2014/zhanhang2014.github.io"
     },
-    "bugs": "https://github.com/Huxpro/huxpro.github.io/issues",
+    "bugs": "https://github.com/zhanhang2014/zhanhang2014.github.io/issues",
     "devDependencies": {
         "grunt": "~0.4.5",
         "grunt-contrib-less": "~0.11.4",
