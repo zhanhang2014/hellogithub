@@ -2,7 +2,7 @@
 layout:     post
 title:      "使用AWS搭建自己的VPN"
 subtitle:   "论如何造一把称手的梯子"
-date:       2016-06-07 12:00:00
+date:       2016-06-10 12:00:00
 author:     "Hang"
 header-img: "img//2016-06-03/head-bg.jpg"
 catalog: true
@@ -37,7 +37,7 @@ GFW 的封锁主要包括：
 
 VPN(virtual private network) 能够将私有网络如局域网连接到公共网络或互联网上，用户可以通过连接到私有网络的设备访问公共网络或互联网[(wiki)](https://en.wikipedia.org/wiki/Virtual_private_network)。
 
-![](/img/2016-06-09/vpn-mechanic.png)
+![](/img/2016-06-10/vpn-mechanic.png)
 
 也就是说, VPN 能够让你的设备远程连接到一台主机上，通过这台主机访问互联网，而你的设备和这台主机之间的数据传输是经过加密的。
 
@@ -82,7 +82,7 @@ VPN(virtual private network) 能够将私有网络如局域网连接到公共网
 
 比如，打开ios的新建 VPN 选项，可以看到这样的内容：
 
-![](/img/2016-06-09/vpn-options.jpg)
+![](/img/2016-06-10/vpn-options.jpg)
 
 其中这个 IKEv2 是一个新版的安全协议，应该是今后发展的趋势。我现在使用的是 PPTP 协议，[上面](#build)教程中也有详细介绍。PPTP协议比较简单，容易被识别，比如如果我使用校园网就连不上。感觉ios里 VPN 协议是按照推荐顺序排列的。最为稳定的应该是 IKEv2 吧。而且现在 Ubuntu 上能够直接使用 apt-get 安装了，后面我也可以考虑换成 IKEv2 吧。
 
