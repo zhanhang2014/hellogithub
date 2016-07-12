@@ -10,9 +10,9 @@
     <meta name="keyword"  content="詹航, Zhanhang詹航, Zhanhang, 鬼栈, Zhanhangpro, @Zhanhangpro, 詹航的博客, Zhanhang Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>使用AWS搭建自己的VPN - 詹航的博客 | Hang's Blog</title>
+    <title>Instagram 插画推荐 - 詹航的博客 | Hang's Blog</title>
 
-    <link rel="canonical" href="http://zhanhang2014.github.io/2016/06/10/AWS-VPN/">
+    <link rel="canonical" href="http://zhanhang2014.github.io/2016/07/12/Instagram-Illustrators/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -159,15 +159,15 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/#技术" title="技术">技术</a>
+                        <a class="tag" href="/tags/#绘画" title="绘画">绘画</a>
                         
                     </div>
-                    <h1>使用AWS搭建自己的VPN</h1>
+                    <h1>Instagram 插画推荐</h1>
                     
                     
-                    <h2 class="subheading">论如何造一把称手的梯子</h2>
+                    <h2 class="subheading">致那些富有个性的插画家与画家们</h2>
                     
-                    <span class="meta">Posted by Hang on June 10, 2016</span>
+                    <span class="meta">Posted by Hang on July 12, 2016</span>
                 </div>
             </div>
         </div>
@@ -185,107 +185,160 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h2 id="section">前言</h2>
+				<h2 id="section">写在前面</h2>
 
-<p>这一篇博客记录关于自己搭建VPN的内容。<strong>但是</strong>，我并不想写太多细节方面的东西，<a href="#build">后文</a>列出了很详细的教程，之前我自己也是照着这些教程来做的。</p>
+<p>首先这里应该写的是：</p>
 
-<p>我想就写一写照着教程，踩着一些坑，最后好歹成功搭建起VPN这个过程，自己逐渐形成的“哦，这个原来大概就是这么个玩意儿”一般的认识。</p>
+<p>多图预警！多图预警！多图预警！</p>
 
-<h2 id="section-1">原理</h2>
+<p>这篇博客我来整理一下我在 Instagram 上关注的插画家们。我自己有时也画一点儿，我刷 Ins 上的画有点像是用音乐 App 淘歌一样，慢慢就关注了好多辨识度蛮强的插画家。就挑一部分来写写自己的感受吧。</p>
 
-<p>简单来说，我们之所以需要使用 VPN ，是因为我们需要加密数据来避免GFW的封锁。</p>
+<h2 id="marutibitamin">maruti_bitamin</h2>
 
-<h4 id="gfw-">GFW 简单说明</h4>
+<p>这是一位住在多伦多的日本插画家，形容一下她的画风简直就是可爱的幽灵。</p>
 
-<p>GFW 的封锁主要包括：</p>
+<p><img src="/img/2016-07-12/maruti_bitamin/01.jpeg" alt="" /></p>
 
-<ol>
-  <li>关键字过滤</li>
-  <li>IP封锁</li>
-  <li>DNS污染、劫持</li>
-  <li>特定端口封锁</li>
-  <li>加密连接干扰</li>
-</ol>
+<p>她画的人物表情通常都比较淡：</p>
 
-<p>而之所以其能够进行封锁，是因为网络协议的数据包头部是明文的，加密连接HTTPS的公钥也是明文的。如果在跨境传输过程中有某种加密手段，那么监视和封锁便无从谈起了。</p>
+<p><img src="/img/2016-07-12/maruti_bitamin/02.jpg" alt="" /></p>
 
-<h4 id="vpn-">VPN 简单说明</h4>
+<p>题材多包括幽灵啦：</p>
 
-<p>VPN(virtual private network) 能够将私有网络如局域网连接到公共网络或互联网上，用户可以通过连接到私有网络的设备访问公共网络或互联网<a href="https://en.wikipedia.org/wiki/Virtual_private_network">(wiki)</a>。</p>
+<p><img src="/img/2016-07-12/maruti_bitamin/03.jpeg" alt="" /></p>
 
-<p><img src="/img/2016-06-10/vpn-mechanic.png" alt="" /></p>
+<p>植物花儿啦：</p>
 
-<p>也就是说, VPN 能够让你的设备远程连接到一台主机上，通过这台主机访问互联网，而你的设备和这台主机之间的数据传输是经过加密的。</p>
+<p><img src="/img/2016-07-12/maruti_bitamin/04.jpg" alt="" /></p>
 
-<h2 id="section-2">实现</h2>
+<p>昆虫动物啦：</p>
 
-<p>要实现 VPN 的搭建我们需要准备：</p>
+<p><img src="/img/2016-07-12/maruti_bitamin/05.png" alt="" /></p>
 
-<blockquote>
-  <p>一台不受封锁的服务器</p>
-</blockquote>
+<p><img src="/img/2016-07-12/maruti_bitamin/06.png" alt="" /></p>
 
-<blockquote>
-  <p>以及一种与这台服务器通信的、加密的数据传输协议</p>
-</blockquote>
+<p>总之题材很丰富。内容有时充实繁复：</p>
 
-<p>那么下文就再继续讲这两方面的内容。</p>
+<p><img src="/img/2016-07-12/maruti_bitamin/07.jpg" alt="" /></p>
 
-<h4 id="section-3">服务器</h4>
-<p id="build"></p>
+<p><img src="/img/2016-07-12/maruti_bitamin/08.jpg" alt="" /></p>
 
-<p>服务器方面，推荐亚马逊的<a href="https://aws.amazon.com/cn/">AWS</a>, 新用户可以免费使用一年。</p>
+<p>有时简单也很打动人：</p>
 
-<p>申请教程在<a href="http://bbs.ngacn.cc/read.php?tid=7298878">这里</a>写得非常详细。</p>
+<p><img src="/img/2016-07-12/maruti_bitamin/09.jpg" alt="" /></p>
 
-<p>关于AWS有一些值得注意的地方：</p>
+<p><img src="/img/2016-07-12/maruti_bitamin/10.jpg" alt="" /></p>
 
-<ol>
-  <li>免费申请的服务器是有适用范围的，超出部分需要付费，务必谨慎操作；</li>
-  <li>
-    <p>避免额外开销的TIPS:</p>
+<p>就连工作台也收拾得很像她的画：</p>
 
-    <blockquote>
-      <ol>
-        <li>在网上购买虚拟信用卡用于认证，这样即使产生了费用也不会扣到你的钱</li>
-        <li>注意同时只运行一个实例，保证时间不超过上限</li>
-        <li>不用的实例记得及时关闭，解除绑定的IP及时删除(我因为这个扣了几美分)</li>
-        <li>时常登录控制台查看自己的账单</li>
-      </ol>
-    </blockquote>
-  </li>
-  <li>可以选择服务器实例区域，建议选东京，我现在用着很流畅，最开始选的美国延时很高</li>
-</ol>
+<p><img src="/img/2016-07-12/maruti_bitamin/11.jpg" alt="" /></p>
 
-<h4 id="section-4">协议</h4>
+<p>她有一个自己的<a href="http://koyamori.tictail.com/">网站</a>卖一些创作周边。
+可惜在多伦多，不然我真想买一些。</p>
 
-<h5 id="section-5">隧道技术</h5>
+<h2 id="pencilballad">pencilballad</h2>
 
-<p>隧道技术的基本过程是在源局域网与公网的接口处将数据(可以是ISO七层模型中的数据链路层或网络层数据)作为负载封装在一种可以在公网上传输的数据格式中，在目的局域网与公网的接口处将数据解封装，取出负载。被封装的数据包在互联网上传递时所经过的逻辑路径被称为“隧道”。</p>
+<p>这是一位主要画铅笔画的韩国的插画家，可以说她的线条相对来说还蛮简单的。
+特点是型准，堪比相机。她的有些画让人觉得像是照片提出的轮廓一样。</p>
 
-<p><img src="/img/2016-06-10/vpn-protocal.jpg" alt="" /></p>
+<p><img src="/img/2016-07-12/pencilballad/01.png" alt="" /></p>
 
-<p>目前VPN隧道协议主要有4种：点到点隧道协议PPTP、第二层隧道协议L2TP、网络层隧道协议IPSec以及SOCKS v5。各种协议的特点有兴趣可以自己了解一下。</p>
+<p>表情的细腻捕捉得很好，这主要体现在眼睛和嘴唇刻画上。人物的头发笔触干练，光影赏心悦目。她喜欢特别画一画鼻子，这个我感觉还不多见的(我贴的这几张好像体现不明显)。</p>
 
-<p>比如，打开ios的新建 VPN 选项，可以看到这样的内容：</p>
+<p><img src="/img/2016-07-12/pencilballad/02.jpg" alt="" /></p>
 
-<p><img src="/img/2016-06-10/vpn-options.jpg" alt="" /></p>
+<p><img src="/img/2016-07-12/pencilballad/03.jpg" alt="" /></p>
 
-<p>其中这个 IKEv2 是一个新版的安全协议，应该是今后发展的趋势。我现在使用的是 PPTP 协议，<a href="#build">上面</a>教程中也有详细介绍。PPTP协议比较简单，容易被识别，比如如果我使用校园网就连不上。感觉ios里 VPN 协议是按照推荐顺序排列的。最为稳定的应该是 IKEv2 吧。而且现在 Ubuntu 上能够直接使用 apt-get 安装了，后面我也可以考虑换成 IKEv2 吧。</p>
+<p>有时，她会给自己的画一些简单配色(她也有少量水彩画我就不贴了)：</p>
 
-<p>最后再给两个教程：</p>
+<p><img src="/img/2016-07-12/pencilballad/04.png" alt="" /></p>
 
-<p><a href="http://blog.csdn.net/simonjay2007/article/details/7563933">L2TP/IPSec VPN 架设教程</a></p>
+<p><img src="/img/2016-07-12/pencilballad/05.png" alt="" /></p>
 
-<p><a href="http://www.tuicool.com/articles/MjqE7fF">IPSec/IKEv2 VPN 架设教程</a></p>
+<p><img src="/img/2016-07-12/pencilballad/06.jpg" alt="" /></p>
 
-<h2 id="section-6">后记</h2>
+<p>有时，她会给自己的画配上一束花或是一个小物件：</p>
 
-<p>搭梯子教程到这里就结束了。</p>
+<p><img src="/img/2016-07-12/pencilballad/07.png" alt="" /></p>
 
-<p>当然 AWS 的用处远不止搭建 VPN 这么一点儿。以后有时间再慢慢发掘吧。</p>
+<p><img src="/img/2016-07-12/pencilballad/08.jpg" alt="" /></p>
 
-<p>对了我最喜欢在Ins上关注的插画家们，有空时刷一刷，很多作品都超级耐看。</p>
+<p>她的<a href="http://www.grafolio.com/pencilballad">作品集</a>也是可以访问到的哦。</p>
+
+<h2 id="cristallharper">cristallharper</h2>
+
+<p>这位美国犹他州的画家在 Ins 上的介绍是：Wife. Painter. Dog-lover. Utahn. Scorpio. Soap-maker.</p>
+
+<p>蛮有趣的，她还专门有个网站卖肥皂。当然，也可以在她的<a href="http://www.cristallharper.com/paintings/">个人网站</a>上看到她的画作。主要包括植物、动物(各种狗狗)和海景。我这里都是贴的她画的狗狗，抛开技法不论，从她的画作能强烈感受到她所倾注的喜爱，真是个不折不扣的 Dog-lover。</p>
+
+<p><img src="/img/2016-07-12/cristallharper/01.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/cristallharper/02.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/cristallharper/03.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/cristallharper/04.jpg" alt="" /></p>
+
+<h2 id="alicavanaugh"><em>alicavanaugh</em></h2>
+
+<p>这一位可以说是这次介绍里面最具特点，艺术水准最高的了。常年在世界各地办个人画展，还做艺术培训，价格是100刀一小时。她的<a href="http://www.alicavanaugh.com/">网站</a>有画出售，当然价格不菲。</p>
+
+<p>她喜欢画小孩，特点是让颜料在画上自然(其实会为了控制未干的颜料流向而倾斜画板)晕开，产生一种水渍的效果，使画面传递出来的氛围非常奇妙，初见的时候简直有 冲击力。</p>
+
+<p>比如这样的：</p>
+
+<p><img src="/img/2016-07-12/alicavanaugh/01.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/alicavanaugh/02.jpg" alt="" /></p>
+
+<p>她的功底实在是深厚，我翻看了早期写实作品，那色彩就已经十分细腻了。而这种独特风格里面对颜料的把控能力，简直爆炸。</p>
+
+<p>她有一个可爱的女儿，有时她会把画到一半的画丢给女儿随便涂鸦。</p>
+
+<p><img src="/img/2016-07-12/alicavanaugh/03.jpg" alt="" /></p>
+
+<p>有时，她也简单画几笔：</p>
+
+<p><img src="/img/2016-07-12/alicavanaugh/04.png" alt="" /></p>
+
+<h2 id="beebooties">beebooties</h2>
+
+<p>这位插画家非常爱猫。可爱的卡通画风记录自己生活的喜怒哀乐。出场人物主要有：插画家本人，她的丈夫和她的猫们。</p>
+
+<p>她的一只猫长这样：</p>
+
+<p><img src="/img/2016-07-12/beebooties/01.jpg" alt="" /></p>
+
+<p>每一张都非常生动，情绪都鲜明，让人忍俊不禁：</p>
+
+<p><img src="/img/2016-07-12/beebooties/02.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/03.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/04.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/05.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/06.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/07.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/08.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/09.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/10.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/11.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/12.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/13.jpg" alt="" /></p>
+
+<p><img src="/img/2016-07-12/beebooties/14.jpg" alt="" /></p>
+
+<h2 id="section-1">后记</h2>
+
 
 
                 <hr>
@@ -296,19 +349,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/06/04/Hello-Jekyll/" data-toggle="tooltip" data-placement="top" title="Hello Jekyll">
-                        Previous<br>
-                        <span>Hello Jekyll</span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li class="next">
                         <a href="/2016/06/28/KVM-Learning-Notes/" data-toggle="tooltip" data-placement="top" title="KVM学习笔记">
-                        Next<br>
+                        Previous<br>
                         <span>KVM学习笔记</span>
                         </a>
                     </li>
+                    
                     
                 </ul>
 
