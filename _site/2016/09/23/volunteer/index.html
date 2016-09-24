@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="关于前端与设计、黑客与画家 | 詹航，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Zhanhang詹航 的个人博客，与你一起发现更大的世界。">
+    <meta name="keyword"  content="詹航, Zhanhang詹航, Zhanhang, 鬼栈, Zhanhangpro, @Zhanhangpro, 詹航的博客, Zhanhang Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>朗读者志愿者 - 詹航的博客 | Hang's Blog</title>
+
+    <link rel="canonical" href="http://zhanhang2014.github.io/2016/09/23/volunteer/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Hang's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img//2016-06-03/head-bg.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img//2016-06-03/head-bg.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#记事本" title="记事本">记事本</a>
+                        
+                    </div>
+                    <h1>朗读者志愿者</h1>
+                    
+                    
+                    <h2 class="subheading">Give an hour,Get inspired</h2>
+                    
+                    <span class="meta">Posted by Hang on September 23, 2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h2 id="section">正文</h2>
+
+<p>今天去文汇小学做了第一次朗读者志愿服务的助教。两周前报名参加的这个活动，那个时候有专门的公益组织派老师来给我们做了关于朗读技巧和儿童教育方面的培训。</p>
+
+<p>到场听培训的大多是自家小孩正好在小学二三年级的同事们，也听他们讲了不少带孩子的心得体会。想到自己这个实习生也来凑热闹，我就偷偷笑话自己。</p>
+
+<p>不过还是觉得很有趣。</p>
+
+<p>中午吃完饭，公司的班车接我们到学校。大概半小时的车程。我报名的是二年级组，组长是Kaixuan，我和Grace算这次的助教。老实说我什么都不会，这一次也没有准备，就这么上了班车。</p>
+
+<p>文汇小学是一所外来务工子弟学校。培训的老师说，那里的孩子，他们的父母可能不太重视培养孩子的阅读兴趣，或者忙于生计，不太会给孩子读故事。来做志愿者的同事们也表示，给自己的孩子读故事，是一件多么幸福的事。小孩子能多听到一些故事当然是好的。我试图努力回想了一下，小学二三年级的自己，会因为听不到故事而感到不幸吗？</p>
+
+<p>我不太清楚了，不过我想我会喜欢这个活动。</p>
+
+<p>很久没走进这样小学二年级的教室了，喧闹、活泼。我很佩服我的同事们。Kaixuan的儿子今年正好也上二年级，看得出他蛮有经验，也是有认真准备用心给孩子们讲绘本的故事的。大大的微笑挂在他的脸上，温和耐心地引导孩子们回答问题，故事的衔接过渡也提前设计了方案。我实在是欣赏这种认真细致的态度。Grace更年长一些，是婶婶级的存在，很有气场的。每次互动场面过于热烈的时候，Grace总能恰如其分地控制住场面。就只有我，在孩子们的目光中还略微有些不适应，笑容都有点儿生硬吧。</p>
+
+<p>所以说，这次我并没帮上太多忙。到后半段的时候就基本在教室后面拍照和观察孩子们了。有一直很乖的孩子，也有常常开小差的孩子，总的说来他们的纪律不算太好，但在Kaixuan朗读故事的时候，大部分孩子还是很专注地在听。而一旦和他们互动一下，现场就会变得很热烈。</p>
+
+<p>我在最后面看到，坐在教室不同位置的小孩的表现还是有很明显的分化。越坐得靠后，孩子的注意力就越不集中。这也是可以理解的。这里面，最后一排穿粉色衣服的小女孩特别让我在意。我们刚进教室的时候，她径直从最后一排走上讲台来帮我们调PPT，而提供的是个错误的方法，同学们并没给她什么好评。同在最后一排，其他小孩虽然也显得不那么集中注意力，但她则更甚：要么动作幅度很大地喝水，要么就拿书或手绢捂住自己的头，还好几次钻到书桌下面蜷成一团。我不知道该怎么办，是不要在意呢，还是去提醒她一下呢？是温柔一点儿呢，还是严厉一些呢？不管她我有点儿于心不忍，关注太多会不会影响Kaixuan的朗读呢？</p>
+
+<p>我半犹豫着欠过身去，小声说让她听故事。小姑娘没怎么理睬我，我也就只好悻悻而返。后来，Grace也注意到了这个小女孩，她蹲下身去，一边用手轻轻抚着女孩的头一边问她怎么了。Grace问完女孩，又和她旁边的小男孩说了些话。整个班级并没有怎么在意最后一排这边的情况，那女孩后来也乖巧了很多。我们顺利完成了这次朗读，离开的时候，孩子们的告别都那么热情。</p>
+
+<p>返回公司的途中我问了Grace那个女孩的事，她说是因为旁边的男孩欺负了她，Grace让那个男孩给她了道歉。这个时候我就觉得自己十分笨拙，不懂得怎么去了解别人的立场和情绪，哪怕是那么小的小孩。现在的我很佩服像Grace这样，可以去调解一些自身以外的矛盾。那大概是年纪、修养和女性的光辉带来的吧，我很想向她学我能够学到的部分。不过我想，自己二年级那么大的时候，是比较怕这样的大人的：他们有入侵自己小小世界的技巧，自己完全招架不住。</p>
+
+<p>这个活动对我来说，还蛮有意义的。倒不是说我有颗多么公益的心。能和优秀的同事一起做点什么很是开心，也希望自己的眼里能包容得下好与坏。而且每两周能花几个小时投入一些非技术的事情，学习内核和网络协议的效率也会变高吧。</p>
+
+<p><img src="/img/2016-09-23/01.jpg" alt="" /></p>
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2016/07/21/Wild-Horses/" data-toggle="tooltip" data-placement="top" title="Wild Horses">
+                        Previous<br>
+                        <span>Wild Horses</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/09/24/shard/" data-toggle="tooltip" data-placement="top" title="碎片">
+                        Next<br>
+                        <span>碎片</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                <hr>
+
+                
+                 <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2016/09/23/volunteer"
+                    data-title="朗读者志愿者"
+                    data-url="http://zhanhang2014.github.io/2016/09/23/volunteer/"
+                    >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li>分享到:</li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                      </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+                
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="/2016/09/23/volunteer"
+                        data-title="朗读者志愿者"
+                        data-url="http://zhanhang2014.github.io/2016/09/23/volunteer/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zhanhang2014"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Hang's Blog 2016
+                    <br>
+                    Theme by Hux
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0" /> -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

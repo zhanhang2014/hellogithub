@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="关于前端与设计、黑客与画家 | 詹航，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Zhanhang詹航 的个人博客，与你一起发现更大的世界。">
+    <meta name="keyword"  content="詹航, Zhanhang詹航, Zhanhang, 鬼栈, Zhanhangpro, @Zhanhangpro, 詹航的博客, Zhanhang Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>Wild Horses - 詹航的博客 | Hang's Blog</title>
+
+    <link rel="canonical" href="http://zhanhang2014.github.io/2016/07/21/Wild-Horses/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Hang's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img//2016-06-03/head-bg.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img//2016-06-03/head-bg.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#观影" title="观影">观影</a>
+                        
+                    </div>
+                    <h1>Wild Horses</h1>
+                    
+                    
+                    <h2 class="subheading">To Bojack Horseman</h2>
+                    
+                    <span class="meta">Posted by Hang on July 21, 2016</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h2 id="section">正文</h2>
+
+<p>7月22日，就是明天， Bojack Horseman 要出第三季了。起初看这部美漫是因为听到了这首片尾曲 Wild Horse，70年代滚石的老歌。</p>
+
+<embed src="http://music.163.com/style/swf/widget.swf?sid=26714023&amp;type=2&amp;auto=0&amp;width=320&amp;height=66" width="340" height="86" allownetworking="all" />
+
+<p>“这应该值得看一看”，听歌的时候我这么想。然后前两季我都看了两遍，很多细节第一遍是没在意过来的。我尽量不讲剧情直接相关的内容，最好能写成一张文字海报，提供一个第一印象和整体感受。</p>
+
+<p>看 Bojack Horseman 最直接的感受就是这剧很幽默，同时也很抑郁。美式幽默贯穿始终，加上卡通的形式还有动物与人共存的设定。虽然我觉得自己对好莱坞啊，美国流行乐坛啊，俚语啊等等这些美国本土化的东西不够了解错过了很多搞笑的地方，但还是觉得笑点不断。
+而这部剧的主题确实是偏抑郁的。创作者本人 Raphael Bob-Waksberg 说，他刚从纽约搬到洛杉矶的时候，住在朋友的朋友的朋友的好莱坞大别墅里，却感觉非常孤独：</p>
+
+<blockquote>
+  <p>I remember standing out on this deck and looking out over Hollywood and feeling like, 
+“Oh my god, I am on top of the world. But I’ve never been more lonely and isolated.” 
+And from that sort of sprung the idea for this character who had gotten every 
+opportunity but still can’t find a way to be happy. And that was BoJack.</p>
+</blockquote>
+
+<p>细致也是这部剧的一大特点，这体现在情节的连贯与一致、人物设定的精心考虑、背景细节的布置和影射，大概还包括为动画里以卡通人物或动物形象出场的名人的真人配音吧。发现这些细节总是让人暗暗赞叹或是会心一笑。考究起来实在是太多了，有兴趣可以看看知乎<a href="http://zhihu.com/question/26953984/answer/90087683">如何评价动画《马男波杰克》？——Kristofferson的答案</a>和这个问题下的其他答案以及<a href="https://en.wikipedia.org/wiki/BoJack_Horseman#Celebrities">wiki</a>里介绍出场名人的部分。</p>
+
+<p>还有我觉得整部剧的品味不错，比如动物化的角色特点都恰如其分，比如配乐和剧情配合得很好，再比如背景里常常出现对一些名画（我基本都不认识）的模仿或调侃。还有很重要的一点是——可能这里我要稍微提一下剧情了——对于一本好书，或者一个演员成名前后的变化，剧集里面是有细致刻画的，我只想说编剧你懂得真多。</p>
+
+<p>最后说下这部剧的深刻。实际上 Bojack Horseman 可能一直在力求不要深刻。一讲到有道理的话语速就加倍，严肃的话题总是用荒诞的情景来展开。感觉就是：道理我都懂，可是又有什么用呢？又或者是这个剧想要尽量真诚地去展现，而把解读的权利留给观众吧。我很喜欢第二季开头 Bojack 和 Diane 在屋顶上的对话：</p>
+
+<p><img src="/img/2016-07-21/01.png" alt="" /></p>
+
+<h2 id="section-1">参考资料</h2>
+
+<p><a href="http://www.cartoonbrew.com/interviews/behind-bojack-horseman-with-creator-raphael-bob-waksberg-and-director-mike-hollingsworth-103565.html">cartoonbrew-Behind “BoJack Horseman” With Its Creator and Supervising Director</a></p>
+
+<p><a href="https://www.zhihu.com/question/26953984?rf=31172267">知乎-如何评价动画《马男波杰克》？</a></p>
+
+<p><a href="https://en.wikipedia.org/wiki/BoJack_Horseman">wiki-BoJack Horseman</a></p>
+
+<p><a href="http://www.jianshu.com/p/af224af76314">简书-致郁的成人幽默 - Bojack Horseman</a></p>
+
+<p><a href="http://www.vulture.com/2014/09/bojack-horsemans-radically-funny-sadness.html#">vulture-BoJack Horseman Is the Funniest Show About Depression Ever</a></p>
+
+<p><a href="http://www.vulture.com/2015/07/bojack-horseman-season-two-raphael-bob-waksberg.html?mid=twitter_vulture">vulture-BoJack Horseman Creator Raphael Bob-Waksberg on the Show’s Second Season</a></p>
+
+<p><a href="http://www.newyorker.com/culture/cultural-comment/bojack-horseman-and-the-comedy-of-despair">The New Yorker-“BOJACK HORSEMAN” AND THE COMEDY OF DESPAIR</a></p>
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2016/07/12/Instagram-Illustrators/" data-toggle="tooltip" data-placement="top" title="Instagram 插画推荐">
+                        Previous<br>
+                        <span>Instagram 插画推荐</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2016/09/23/volunteer/" data-toggle="tooltip" data-placement="top" title="朗读者志愿者">
+                        Next<br>
+                        <span>朗读者志愿者</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                <hr>
+
+                
+                 <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2016/07/21/Wild-Horses"
+                    data-title="Wild Horses"
+                    data-url="http://zhanhang2014.github.io/2016/07/21/Wild-Horses/"
+                    >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li>分享到:</li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                      </ul>
+                        <div class="ds-share-icons-more">
+                        </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+                
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="/2016/07/21/Wild-Horses"
+                        data-title="Wild Horses"
+                        data-url="http://zhanhang2014.github.io/2016/07/21/Wild-Horses/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zhanhang2014"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    
+
+
+                    
+                    
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; Hang's Blog 2016
+                    <br>
+                    Theme by Hux
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/ 
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers   
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('/js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0" /> -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
