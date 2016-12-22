@@ -10,7 +10,7 @@ tags:
     - 阅读
 ---
 
-We didn't always live on Mango Street. And Mango says goodbye sometimes.
+>We didn't always live on Mango Street. And Mango says goodbye sometimes.
 
 还记得高考刚刚结束的时候，和爸妈一起参加市里的高考志愿咨询会，晚上一起逛街，在解放碑的新华书店买的第一本双语小说 The House on Mango Street。
 
@@ -24,10 +24,10 @@ We didn't always live on Mango Street. And Mango says goodbye sometimes.
 
 练习听写的时候，比起故事本身我更加在意自己的正确率和完成进度之类的。这就好比是因公出差到芒果街：虽然也置身其中，却并非为此而来。直到2015年初，刚考完研的我，那是一段最最低谷的时期。不知怎么的我一遍遍听那些录音，认真思考每一个故事。于是它于我成为了一个归宿。
 
-``` One day I will pack my bags of books and paper. One day I will say goodbye to Mango. I am too strong for her to keep me here forever. One day I will go away. ```
+>One day I will pack my bags of books and paper. One day I will say goodbye to Mango. I am too strong for her to keep me here forever. One day I will go away.
 
 研究生阶段我时常庆幸能做自己感兴趣的事情，能够尝试新鲜的想法，也在一点点了解自己的能力。要去上海实习的入职体检那天我顺路在庆春路购书中心重新买了一本芒果街，之前的不知道是丢了还是送人了。然后一直到现在，实习结束了，又发生了好多事情。我又打算重新读一遍，也许是最后一遍。再分篇默写一次。所有的都默写完再写一篇读后感博客。
 
-``` They will not know I have gone away to come back. For the ones I left behind. For the ones who cannot out ``` 
+>They will not know I have gone away to come back. For the ones I left behind. For the ones who cannot out.
 
 最后，放一张自己板绘的Esperanza.
