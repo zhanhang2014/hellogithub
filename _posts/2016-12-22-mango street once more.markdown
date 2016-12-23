@@ -5,7 +5,7 @@ subtitle:   "I have gone away to come back"
 date:       2016-12-22 10:06:30
 author:     "Hang"
 header-img: "img//2016-06-03/head-bg.jpg"
-catalog: true
+catalog: false
 tags:
     - 阅读
 ---
