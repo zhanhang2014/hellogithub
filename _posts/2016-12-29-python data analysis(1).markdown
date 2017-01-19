@@ -113,41 +113,105 @@ np.pkgload
 
 ###### 中断正在执行的代码
 
-任何代码在执行时
+任何代码在执行时只要按下“Ctrl-C"，就会引发一个KeyboardInterrupt。除一些非常特殊的情况之外，绝大部分Python程序都将立即停止执行。
 
 ##### 执行剪贴板中的代码
 
+除了直接用“Ctrl-Shift-V”将剪贴板的代码片段粘贴出来之外，还可以使用%paste和%cpaste这两个魔术函数。%paste可以承载剪切板中的一切文本，并在shell中以整体形式执行。
+
+%cpaste和%paste类似，但会多一个特殊提示符用于最终执行。在最终执行之前可以任意粘贴代码。如果想在执行粘贴的代码前先检查，可以使用%cpaste。如果发现代码有错可以按下"Ctrl-C"终止%cpaste提示符。
+
 ###### IPython跟编辑器和IDE之间的交互
 
-键盘快捷键
+某些文本编辑器如Emacs和Vim带有一些能将代码块直接发送到IPython的第三方扩展。
 
-异常和跟踪
+某些IDE如Eclipse和Visual Studio都集成了IPython终端应用程序。
 
-魔术命令
+##### 异常和跟踪
 
-基于Qt的富GUI控制台
+如果%run某段脚本或者执行某条语句时发生了异常，IPython默认会输出整个调用栈跟踪(traceback)，其中还会附上调用栈附近的几行代码作为上下文参考。上下文参考的数量可以通过%xmode魔术命令进行控制。
 
-matplotlib集成与pylab模式
+##### 魔术命令
+
+常用的IPython魔术命令：
+
+%quickref 显示IPython的快速参考
+
+%magic 显示所有魔术命令的详细文档
+
+%debug 进入交互式调试器
+
+%hist 打印命令的输入历史
+
+%pdb 在异常发生后自动进入调试器、
+
+%paste 执行剪贴板中的Python代码
+
+%cpaste 打开一个特殊提示符以便于手工粘贴执行的Python代码
+
+%reset 删除interactive命名空间中的全部变量和名称
+
+%page OBJECT 通过分页器打印输出OBJECT
+
+%run script.py 在IPython中执行一个Python脚本
+
+%prun statement 通过cProfile执行statement，并打印分析器的输出结果
+
+%time statement 报告statement的执行时间
+
+%timeit statement 多次执行statement计算平均执行时间
+
+%who %who_is %whos 显示interactive命名空间定义的变量，信息级别/冗余度可变
+
+%xdel variable 删除varibale并尝试清除其在IPython中的对象上的一切引用
+
+魔术命令默认是可以不带%的，只要没有定义与其同名的变量即可。可以通过%automagic打开或关闭。
 
 #### 使用命令历史
 
-搜索并重用命令历史
+##### 搜索并重用命令历史
 
-输入和输出变量
+在输入与历史命令相关的内容后按"Ctrl-P"或向上箭头即可搜索命令历史记录中与输入字符相匹配的命令。多次按则会不断搜索。按"Ctrl-N"或向下箭头可以退回。按“Ctrl-R"会循环搜索命令历史中每一条与输入相符的行。
 
-记录输入和输出
+##### 输入和输出变量
+
+最近的两个输出结果分别保存在_和__中。输入文本的变量被保存在_iX的变量中，其中X是输入行号。每个输入变量都有一个对应的输出变量_X。由于输入变量是字符串，想要重新执行需要使用exec关键字。
+
+##### 记录输入和输出
+
+执行%logstart可以开始记录日志。
 
 #### 与操作系统交互
 
-shell命令和别名
+IPython的另一个重要特点就是它跟操作系统的shell结合非常紧密。以下是一些调用shell命令的魔术命令和语法。
 
-目录书签系统
+!cmd 在系统shell中执行cmd
+
+output=!cmd args 执行cmd并将stdout存放在output中
+
+%alias alias_name cmd 为系统shell命令定义别名
+
+%bookmark 使用IPython的目录书签系统
+
+%pushed directory 将当前目录入栈，并转向目标目录
+
+%popd 弹出栈顶目录，并转向该目录
+
+%dirs 返回一个含有当前目录栈的列表
+
+%dhist 打印目录访问历史
+
+%env 以dict形式返回系统环境变量
+
+##### shell命令和别名
+
+在IPython中，以感叹号!开头的命令行表示其后的所有内容需要在系统shell中执行。在使用!时，也允许使用当前环境定义的Python值，只需要加上$即可。
 
 #### 软件开发工具
 
-交互式调试器
+##### 交互式调试器
 
-调试器的其他使用场景
+IPython的调试器增强了pdb，如Tab自动完成、语法高亮、为异常跟踪的每条信息添加上下文参考等。
 
 测试代码的执行时间:%time和%timeit
 
