@@ -14,9 +14,13 @@ tags:
 
 这个图形概率模型(Probbilistic Graphical Models)是Coursera上的一个系列课程。从多方面来说我都觉得很有用，今年第一要学好的课程(此外还有Python数据处理、人群与网络、数字信号处理、乐理基础)。希望在博客里做个复习总结和进度督促吧，学习的其他课也陆续放上！
 
-## Factors
+## 因素(Factors)
+
+因素是这门课基础中的基础，是描述这一整个知识体系的语言。因素表看起来比较像一个状态描述表+可能取值的罗列。围绕因素的一些基本操作则可以刻画图形概率模型的状态和属性。
 
 ## 概率流
+
+概率网络中的不同节点是可以相互关联和作用的。
 
 ## 条件独立
 
@@ -94,10 +98,88 @@ tags:
 
 ###### 因素乘法
 
+因素乘法要解决的问题有：
+
+1) 合并变量，我们直接使用MATLAB的union函数；
+2) 找到原因素表与结果表之间的指数映射关系，我们利用了提供的IndexToAssignment和AssignmentToIndex两个函数。
+
+解决了这两个问题，乘法本身是trival的不多说了，代码可以在我的github上找到。
+
 ###### 边缘化
+
+边缘化需要从原因素表中去掉某几个特征量，即将剩下的变量的相同组合做一个合并。操作方法：
+
+1) 类似于union，使用setdiff找到边缘化后剩下的特征量以及和原因素表的映射关系。
+2) 找到映射关系后，可以用循环的方式来合并相同项：
+```
+for n = 1:length(indxB)
+   B.val(indxB(n)) = A.val(n) + B.val(indxB(n));
+end
+```
 
 ###### 化简
 
+因素的化简是将已经观察到的特征变量标记，将该变量不符合标记值的所有组合结果置0。使用嵌套循环来实现这一功能，外层循环找到观测结果的变量和值，内层循环对每张因素表做修改。修改过程注意可以使用矢量化的技巧避免循环嵌套过深。
+
+```
+assignments = IndexToAssignment(1:prod(F(j).card), F(j).card);
+[mapF,~,~] = find(assignments(:,indx) ~= x);
+indxF = AssignmentToIndex(assignments(mapF,:), F(j).card);
+F(j).val(indxF) = 0;
+```
 
 ##### 计算联合概率分布
 
+有了以上的因素基本操作函数，计算联合概率分布就十分方便了。在假设因素都符合条件概率的情况下，应用贝叶斯网络的链式法则我们只需要对因素表做因素乘法即可：
+
+```
+for i = 1:length(F)
+   Joint = FactorProduct(Joint,F(i)); 
+end
+```
+
+##### 计算边际
+
+对于一个结构已知的贝叶斯网络，在使用因素表求得联合概率分布之后，若取得某些特征的观测值，则可以再以此计算边缘分布。
+计算边缘分布的步骤为：
+
+1) 计算联合概率分布；
+2) 将已知观测值化简；
+3) 边缘化化简后的因素表；
+4) 归一化为概率分布。
+
+值得注意的是在边缘化的时候由于观测值变量集合可能与因素表有不同的部分，需要使用交集setdiff进行处理。四个步骤的MATLAB代码：
+
+```
+M = ComputeJointDistribution(F);
+M = ObserveEvidence(M, E);
+M = FactorMarginalization(M, setdiff(M.var,V));
+M.val = M.val./sum(M.val);
+```
+
+##### 用自己编写的函数查询信誉网络
+
+为了验证我们编写的函数的正确性，可以用课程提供的转换函数将SAMIAM软件中的贝叶斯网络转换到MATLAB中比较不同边界情况的结果。
+转换的方式为：
+
+```
+[F, names, valNames] = ConvertNetwork('Credit_net.net');
+```
+
+例如这个时候我们希望知道在其他条件相同的情况下，超过65岁的低债务低收入人群的信誉分布，在SAMAIAM软件中可以看到：
+
+![](/img/2017-03-15/example.jpg)
+
+如果我们使用之前编写的MATLAB程序来计算则有：
+
+```
+[F, names, valNames] = ConvertNetwork('Credit_net.net');
+A = ComputeMarginal([1], F, [4 3;5 3;7 1]);
+A
+A = 
+     var: 1
+    card: 2
+     val: [0.6571 0.3429]
+```
+
+结果与软件所得一致。
