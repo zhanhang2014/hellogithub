@@ -33,7 +33,7 @@ docker-machine ls
 
 可以看到：
 
-![](img/2017-03-25/machine.jpg)
+![](/img/2017-03-25/machine.jpg)
 
 然后便可以部署TensorFlow的容器了。使用docker pull命令下载镜像(同样推荐在[阿里云开发者平台](https://dev.aliyun.com/search.html)上查找)。然后使用docker run命令启动容器。不过更简便的方法是用docker-compose以配置文件的方式来部署。推荐一个学习用的教程[https://github.com/aymericdamien/TensorFlow-Examples](https://github.com/aymericdamien/TensorFlow-Examples?spm=5176.100239.blogcont60601.21.rcckTf)上面有Jupyter环境和官方例程的代码。使用：
 
@@ -50,7 +50,7 @@ docker-compose up -d
 
 创建完成后，在终端查看启动的Docker容器:
 
-![](img/2017-03-25/containers.jpg)
+![](/img/2017-03-25/containers.jpg)
 
 #### 端口转发
 
@@ -64,7 +64,7 @@ docker exec it jupyter bash
 
 以管理员方式打开Vitual box->选中正在运行的虚拟机->设置->网络->高级->端口转发->按配置文件设置端口和名称。
 
-![](img/2017-03-25/port.jpg)
+![](/img/2017-03-25/port.jpg)
 
 注意要关闭网络代理，在主机的浏览器上打开[http://localhost:8888/](http://localhost:8888/)和[http://localhost:6006/](http://localhost:6006/)就可以访问容器了。
 
@@ -144,7 +144,7 @@ with tf.Session() as sess:
 
 ```
 
-![](img/2017-03-25/regression.jpg)
+![](/img/2017-03-25/regression.jpg)
 
 ## 感想&后续目标
 
