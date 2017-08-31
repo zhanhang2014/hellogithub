@@ -11,8 +11,11 @@ tags:
 ---
 
 > 层楼终究误少年，自由早晚乱余生
+
 >                          ————《郭源潮》
+
 > Pain is inevitable, suffering is optional.
+
 >                          ———— WHAT I TALK WHEN I TALK ABOUT RUNNING
 
 
