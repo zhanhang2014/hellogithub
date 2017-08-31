@@ -10,14 +10,9 @@ tags:
     - 态度
 ---
 
-> 层楼终究误少年，自由早晚乱余生
+> 层楼终究误少年，自由早晚乱余生                       ————《郭源潮》                       
 
->                          ————《郭源潮》
-
-> Pain is inevitable, suffering is optional.
-
->                          ———— WHAT I TALK WHEN I TALK ABOUT RUNNING
-
+> Pain is inevitable, suffering is optional.           ———— WHAT I TALK WHEN I TALK ABOUT RUNNING
 
 还记得很久以前，拥有属于自己的网站是我的一个梦想。曾经很多次自己独自设想过这个网站要有哪些功能，也和朋友描述过它会有什么样的访问权限，在哪里实现哪些小游戏。本科的时候，这是我很多夭折的暑期项目之一。但那时还是逐渐了解了域名，服务器，数据库，建站的基本概念。“有一天我会买一台自己的服务器，然后就可以建属于我自己的网站了”。那个时候的目标是做一个像陈绮贞的个人主页cheerygo那样的文艺漂亮充满细节的私人领域。
 
