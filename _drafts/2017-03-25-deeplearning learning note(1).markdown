@@ -72,7 +72,7 @@ docker exec it jupyter bash
 
 环境配置好之后，我们就用一个简单的线性回归的例子来实践一下。这个例子的代码在jupyter中：
 
-![](img/2017-03-25/example.jpg)
+![](/img/2017-03-25/example.jpg)
 
 我把完整代码和自己的注释也贴在这里：
 
