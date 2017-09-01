@@ -131,6 +131,7 @@ public void union(int p, int q) {
 ```
 
 对于这个算法：
+
 |算法|初始化|union|connected|
 |------|------|------|------|
 |Weighted-quick-union-find|N|lg(N)|lg(N)|
